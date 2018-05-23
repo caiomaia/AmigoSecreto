@@ -1,13 +1,19 @@
 package br.fateczl.les.amigosecreto.entidade;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-public class Evento {
+public class Evento implements Serializable{
 
+	@Id
+	private Long id;
+	
+	
 	@Column
 	private String nome;
 

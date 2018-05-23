@@ -1,12 +1,15 @@
 package br.fateczl.les.amigosecreto.entidade;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-public class Sorteio {
+public class Sorteio implements Serializable {
+	
+	
 	
 	@Column
 	private Date data;
