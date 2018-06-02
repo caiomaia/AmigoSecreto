@@ -1,13 +1,23 @@
 package br.fateczl.les.amigosecreto.dao;
 
+import java.io.Serializable;
+
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.fateczl.les.amigosecreto.entidade.Participante;
 import br.fateczl.les.amigosecreto.util.FabricaEntityManager;
 
-public class ParticipanteDAO {
+
+
+public class ParticipanteDAO implements Serializable{
+	
+	@Inject
+	private EntityManager em;
 
 	public void salvar(Participante participante){ //salvar e editar*
+		
+		
 		EntityManager entityManager = FabricaEntityManager.getEntityManager();
 		try {
 			entityManager.getTransaction().begin();
