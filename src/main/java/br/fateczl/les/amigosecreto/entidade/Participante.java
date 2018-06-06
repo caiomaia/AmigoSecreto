@@ -17,6 +17,15 @@ public class Participante {
 	private String nome;
 	
 	@Column
+	private String sobrenome;
+	
+	@Column
+	private String whatsapp;
+	
+	@Column
+	private String telefonefixo;
+	
+	@Column
 	private String email;
 	
 	@Column
@@ -41,5 +50,36 @@ public class Participante {
 		this.dicaPresente = dicaPresente;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	
+	public String getTelefonefixo() {
+		return telefonefixo;
+	}
+	
+	public void setTelefonefixo(String telefonefixo) {
+		this.telefonefixo = telefonefixo;
+	}
+	
+	public String getWhatsapp() {
+		return whatsapp;
+	}
+	
+	public void setWhatsapp(String whatsapp) {
+		this.whatsapp = whatsapp;
+	}
 	
 }

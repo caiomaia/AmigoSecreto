@@ -22,7 +22,7 @@ public class ParticipanteDAO implements Serializable{
 		try {
 			entityManager.getTransaction().begin();
 			entityManager.merge(participante);  //com o merge, caso já exista algo ele substitui
-			entityManager.getTransaction().commit();;
+			entityManager.getTransaction().commit();
 		} finally {
 			entityManager.close();
 		}
