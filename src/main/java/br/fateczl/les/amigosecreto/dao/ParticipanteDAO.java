@@ -1,12 +1,14 @@
 package br.fateczl.les.amigosecreto.dao;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.fateczl.les.amigosecreto.entidade.Participante;
-import br.fateczl.les.amigosecreto.util.FabricaEntityManager;
 
 
 
@@ -16,9 +18,13 @@ public class ParticipanteDAO implements Serializable{
 	private EntityManager em;
 
 	public void salvar(Participante participante){ //salvar e editar*
-		
-		
-		EntityManager entityManager = FabricaEntityManager.getEntityManager();
+		Set<Participante> participanteSet = new HashSet<>(); 
+		for (Iterator<Participante> iterator = participanteSet.iterator(); iterator.hasNext();) {
+			participanteSet.add(participante);
+		}
+		em.persist(participante);
+	}
+	/*	EntityManager entityManager = FabricaEntityManager.getEntityManager();
 		try {
 			entityManager.getTransaction().begin();
 			entityManager.merge(participante);  //com o merge, caso já exista algo ele substitui
@@ -50,5 +56,5 @@ public class ParticipanteDAO implements Serializable{
 		} finally {
 			entityManager.close();
 		}
-	}
+	}*/
 }
