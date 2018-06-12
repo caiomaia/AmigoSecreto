@@ -3,39 +3,39 @@ package br.fateczl.les.amigosecreto.dao;
 import java.io.Serializable;
 
 import javax.persistence.EntityManager;
-import br.fateczl.les.amigosecreto.entidade.Evento;
+import br.fateczl.les.amigosecreto.entidade.Acesso;
 import br.fateczl.les.amigosecreto.util.FabricaEntityManager;
 
-public class EventoDAO implements Serializable{
+public class AcessoDAO implements Serializable{
 	
-	public void salvar(Evento evento){ //salvar e editar*
+	public void salvar(Acesso acesso){ //salvar e editar*
 		 
 			EntityManager entityManager = FabricaEntityManager.getEntityManager();
 			try {
 				entityManager.getTransaction().begin();
-				entityManager.merge(evento);  //com o merge, caso já exista algo ele substitui
+				entityManager.merge(acesso);  //com o merge, caso já exista algo ele substitui
 				entityManager.getTransaction().commit();
 			} finally {
 				entityManager.close();
 			}
 		}
 		
-		public Evento buscar(Long id){
+		public Acesso buscar(Long id){
 			EntityManager entityManager = FabricaEntityManager.getEntityManager();
-			Evento resultado = null;
+			Acesso resultado = null;
 			try {
-				resultado = entityManager.find(Evento.class, id);
+				resultado = entityManager.find(Acesso.class, id);
 			} finally {
 				entityManager.close();
 			}
 			return resultado;
 		}
 		
-		public void excluir(Evento evento){
+		public void excluir(Acesso acesso){
 			EntityManager entityManager = FabricaEntityManager.getEntityManager();
 			try {
 				entityManager.getTransaction().begin();
-				entityManager.remove(evento);
+				entityManager.remove(acesso);
 				entityManager.getTransaction().commit();
 			} finally {
 				entityManager.close();
