@@ -8,7 +8,7 @@ import br.fateczl.les.amigosecreto.entidade.Participante;
 public class ParticipanteDAOTeste {
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void salvar(){
 		Participante participante = new Participante();
 		participante.setNome("Caio");
@@ -34,6 +34,7 @@ public class ParticipanteDAOTeste {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void excluir(){
 		Long id = 5L;

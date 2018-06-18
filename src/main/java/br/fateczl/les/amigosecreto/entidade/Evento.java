@@ -21,6 +21,7 @@ public class Evento implements Serializable{
 	private String cep;
 	private String bairro;
 	private Date hora;
+	private Date data;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -79,6 +80,16 @@ public class Evento implements Serializable{
 	public void setHora(Date hora) {
 		this.hora = hora;
 	}
+	
+	@Column
+	public Date getData() {
+		return data;
+	}
+	
+	public void setData(Date data) {
+		this.data = data;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
