@@ -1,12 +1,12 @@
 package br.fateczl.les.amigosecreto.entidade;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Convidar {
@@ -15,14 +15,16 @@ public class Convidar {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column
-	private Date data;
 	
 	@Column
 	private String local;
 	
 	@Column
 	private String horario;
+	
+	@JoinColumn
+	@OneToMany
+	private Participante participante;
 	
 	
 	public Long getId() {
@@ -31,12 +33,7 @@ public class Convidar {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Date getData() {
-		return data;
-	}
-	public void setData(Date data) {
-		this.data = data;
-	}
+	
 	public String getLocal() {
 		return local;
 	}

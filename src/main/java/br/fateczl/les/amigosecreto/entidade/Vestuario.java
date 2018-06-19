@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Vestuario implements Serializable{
@@ -23,6 +25,10 @@ public class Vestuario implements Serializable{
 	
 	@Column
 	private int sapatoNumero;
+	
+	@JoinColumn
+	@OneToOne
+	private Modelo modelo;
 
 	public Long getId() {
 		return id;
@@ -54,6 +60,14 @@ public class Vestuario implements Serializable{
 
 	public void setSapatoNumero(int sapatoNumero) {
 		this.sapatoNumero = sapatoNumero;
+	}
+	
+	public Modelo getModelo() {
+		return modelo;
+	}
+	
+	public void setModelo(Modelo modelo) {
+		this.modelo = modelo;
 	}
 
 	@Override

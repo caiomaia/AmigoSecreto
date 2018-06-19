@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Participante implements Serializable{
@@ -32,6 +34,10 @@ public class Participante implements Serializable{
 	
 	@Column
 	private String dicaPresente;
+	
+	@OneToOne
+	@JoinColumn
+	private Vestuario vestuario;
 	
 	public Long getId() {
 		return id;
@@ -80,4 +86,12 @@ public class Participante implements Serializable{
 	public void setDicaPresente(String dicaPresente) {
 		this.dicaPresente = dicaPresente;
 	}	
+	
+	public Vestuario getVestuario() {
+		return vestuario;
+	}
+	
+	public void setVestuario(Vestuario vestuario) {
+		this.vestuario = vestuario;
+	}
 }
