@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Convidar</title>
+</h:head>
+<h:body>
+	<p:panelGrid columns="14" layout="grid">
+
+		<p:link value="Home">
+		</p:link>
+
+		<p:link value="Evento">
+		</p:link>
+
+		<p:link value="Convidar">
+		</p:link>
+
+		<p:link value="Lista">
+		</p:link>
+
+		<p:link value="Participante">
+		</p:link>
+
+		<p:link value="Manual do Sistema">
+		</p:link>
+
+		<p:link value="Contato">
+		</p:link>
+
+	</p:panelGrid>
+
+
+	<p:panel header="Convite">
+
+		<h:form id="formListagem">
+			<p:dataTable id="tabela" value="#{convidarBean.participantesAtuais}"
+				emptyMessage="Nenhum participante convidado." paginator="true"
+				var="convidados" rows="5">
+				<f:facet name="header">
+					<p:commandButton value="Convidar" actionListener="#{convidarBean.novo()}"
+						oncomplete="PF('dialogo').show();">
+					</p:commandButton>
+				</f:facet>
+				<p:column headerText="Nome">
+					<h:outputText value="#{participante.nome}"/>
+				</p:column>
+
+				<p:column headerText="Whatsapp">
+					<h:outputText value="#{participante.whatsapp}" />
+				</p:column>
+
+				<p:column headerText="Login">
+					<h:outputText value="#{participante.acesso.login}" />
+				</p:column>
+				
+				<p:column headerText="Senha">
+					<h:outputText value="#{participante.acesso.senha}" />
+				</p:column>
+
+				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-trash">
+					</p:commandButton>
+
+					<p:commandButton icon="ui-icon-pencil">
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		<p:dialog header="Pessoas - Cadastro" widgetVar="dialogo"
+			draggable="false" resizable="false" modal="true" cloasable="false">
+			<h:form id="formCadastro">
+				<h:panelGrid id="painel" columns="2">
+					<p:outputLabel value="Nome:" />
+					<p:inputText id="nome" size="40" maxlength="50" 
+					value="#{convidarBean.participante.nome}"/>
+
+					<p:outputLabel value="Whatsapp:" />
+					<p:inputText id="whatsapp" size="15" 
+					value="#{convidarBean.participante.whatsapp}"/>
+
+					<p:outputLabel value="Login" />
+					<p:inputText id="login" size="25" 
+					value="#{convidarBean.participante.acesso.login}"/>
+					
+					<p:outputLabel value="Senha" />
+					<p:inputText id="senha" size="15" 
+					value="#{convidarBean.participante.acesso.login}"/>
+
+				</h:panelGrid>
+
+				<h:panelGrid columns="2">
+					<p:commandButton value="Salvar"
+						update=" :formCadastro:painel :formListagem:tabela" />
+					<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
+				</h:panelGrid>
+			</h:form>
+		</p:dialog>
+	</p:panel>
+		<p:spacer height="0" width="420"/>
+		<p:commandButton value="Enviar convites"/>
+</h:body>
+</html>

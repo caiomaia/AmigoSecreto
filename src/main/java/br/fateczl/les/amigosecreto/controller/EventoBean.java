@@ -24,13 +24,12 @@ public class EventoBean implements Serializable{
 		
 	public void salvar(){
 		try {
-			this.cadastroeventoservice.salvar(evento);
-			//EventoDAO eventoDAO = new EventoDAO();
-			//eventoDAO.salvar(evento);
-			//limpar();
+			//this.cadastroeventoservice.salvar(evento);
+			EventoDAO eventoDAO = new EventoDAO();
+			eventoDAO.salvar(evento);
 			System.out.println("Salvo");
 			
-		} catch (NegocioException e) {
+		} catch (RuntimeException e) {
 			//FacesUtil.addErrorMessage(e.getMessage());
 			e.printStackTrace();
 		}
@@ -38,14 +37,10 @@ public class EventoBean implements Serializable{
 	
 	@PostConstruct // 
 	public void initializle(){
-		this.limpar();
-	}
-	public void limpar(){
-		this.evento = new Evento();
-		
+		limpar();
 	}
 	
-	public void novo(){
+	public void limpar(){
 		evento = new Evento();
 	}
 	
@@ -56,7 +51,6 @@ public class EventoBean implements Serializable{
 	public void setEvento(Evento evento) {
 		this.evento = evento;
 	}
-	
 	
 	
 	

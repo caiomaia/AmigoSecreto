@@ -1,5 +1,7 @@
 package br.fateczl.les.amigosecreto.entidade;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,9 +24,7 @@ public class Convidar {
 	@Column
 	private String horario;
 	
-	@JoinColumn
-	@OneToMany
-	private Participante participante;
+
 	
 	
 	public Long getId() {

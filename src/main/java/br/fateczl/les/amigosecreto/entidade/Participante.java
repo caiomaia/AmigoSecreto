@@ -39,6 +39,10 @@ public class Participante implements Serializable{
 	@JoinColumn
 	private Vestuario vestuario;
 	
+	@OneToOne
+	@JoinColumn
+	private Acesso acesso;
+	
 	public Long getId() {
 		return id;
 	}
@@ -93,5 +97,13 @@ public class Participante implements Serializable{
 	
 	public void setVestuario(Vestuario vestuario) {
 		this.vestuario = vestuario;
+	}
+	
+	public Acesso getAcesso() {
+		return acesso;
+	}
+	
+	public void setAcesso(Acesso acesso) {
+		this.acesso = acesso;
 	}
 }
