@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Lista</title>
+</h:head>
+<h:body>
+	<h:panelGrid columns="9">
+
+		<p:link value="Home" outcome="evento">
+		</p:link>
+		<p:spacer width="30" height="10" />
+
+		<p:link value="Evento" outcome="evento">
+		</p:link>
+		<p:spacer width="30" height="10" />
+
+		<p:link value="Convidar" outcome="convidar">
+		</p:link>
+		<p:spacer width="30" height="10" />
+
+		<p:link value="Lista" outcome="lista">
+		</p:link>
+		<p:spacer width="30" height="10" />
+
+		<p:link value="Participante" outcome="participante">
+		</p:link>
+
+	</h:panelGrid>
+
+	<p:panel header="Lista de Participantes">
+
+		<h:form id="formListagem">
+			<p:dataTable id="tabela"
+				emptyMessage="Nenhum participante convidado."
+				var="convidados" rows="5">
+				<f:facet name="footer">
+					<p:commandButton value="Gerar amigo secreto"/>
+				</f:facet>
+				<p:column headerText="Nome">
+				</p:column>
+
+				<p:column headerText="Whatsapp">
+				</p:column>
+
+				<p:column headerText="Camisa Tam/Modelo">
+				</p:column>
+				
+				<p:column headerText="Calça Tam/Modelo">
+				</p:column>
+				
+				<p:column headerText="Sapato Tam/Modelo">
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+		
+	</p:panel>
+		
+</h:body>
+</html>

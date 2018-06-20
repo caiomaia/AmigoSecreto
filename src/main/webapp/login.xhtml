@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login</title>
+</h:head>
+<h:body>
+	
+
+	<p:panel id="bemvindo" header="Amigo Secreto online">
+		<h:outputText
+			value="Bem-vindo ao evento Amigo Secreto.
+		Você esta sendo convidado a participar deste evento e ficaremos felizes
+		 com a sua participação. Para participar e acessar o sistema, 
+		 insira seu LOGIN e Senha recebidos em seu WhatsApp." />
+
+	</p:panel>
+
+	<p:panelGrid columns="2" layout="grid">
+		<p:panel id="panelLogin">
+			<h:form id="formLogin">
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Login: " />
+					<p:inputText id="login" size="15" maxlength="15" />
+
+					<p:outputLabel value="Senha: " />
+					<p:password id="nonFeedBack" />
+
+					<p:commandButton value="Entrar" />
+
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+
+		<p:panel id="aviso">
+			<h:outputText
+				value="ATENÇÃO.
+		Para cancelar sua participação no evento acesse o sistema em até 24 horas 
+		a partir da sua confirmação e partipante e clique em sair do evento" />
+		</p:panel>
+	</p:panelGrid>
+</h:body>
+</html>

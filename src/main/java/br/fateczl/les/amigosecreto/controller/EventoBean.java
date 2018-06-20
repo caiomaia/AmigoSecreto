@@ -25,9 +25,9 @@ public class EventoBean implements Serializable{
 	public void salvar(){
 		try {
 			//this.cadastroeventoservice.salvar(evento);
-			EventoDAO eventoDAO = new EventoDAO();
-			eventoDAO.salvar(evento);
-			System.out.println("Salvo");
+			//EventoDAO eventoDAO = new EventoDAO();
+			//eventoDAO.salvar(evento);
+			System.out.println(evento.getNome() + evento.getCep());
 			
 		} catch (RuntimeException e) {
 			//FacesUtil.addErrorMessage(e.getMessage());
