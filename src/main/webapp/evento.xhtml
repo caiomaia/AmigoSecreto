@@ -33,10 +33,10 @@
 
 	</h:panelGrid>
 
-
+<h:form id="formCadastro">
 	<p:panel header="Dados do evento">
 
-		<h:form id="formCadastro">
+		
 			<p:panelGrid columns="4" id="painelCadastro" layout="grid">
 
 				<p:outputLabel value="Nome: " />
@@ -71,12 +71,11 @@
 					pattern="HH:mm" timeOnly="true" />
 				<p:commandButton value="Enviar convite" />
 			</p:panelGrid>
-		</h:form>
+		
 	</p:panel>
 
 
-		<p:commandButton value="Salvar" actionListener="#{eventoBean.salvar}"
-			process="@this" />
+		<p:commandButton value="Salvar"  action="#{eventoBean.salvar}"/>
 		<p:spacer width="100" height="10" />
 
 		<p:commandButton value="Buscar" />
@@ -86,6 +85,6 @@
 		<p:spacer width="100" height="10" />
 
 		<p:commandButton value="Excluir" />
-
+</h:form>
 </h:body>
 </html>

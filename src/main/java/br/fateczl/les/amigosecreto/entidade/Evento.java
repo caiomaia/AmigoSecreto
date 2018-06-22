@@ -12,10 +12,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Evento implements Serializable{
-
+	private static final long serialVersionUID = 4807760566480548918L;
 	private Long id;
 	private String nome;
-	private DecimalFormat valorSugerido;
+	private double valorSugerido;
 	private String logradouro;
 	private String numero;
 	private String cep;
@@ -39,10 +39,10 @@ public class Evento implements Serializable{
 		this.nome = nome;
 	}
 	@Column
-	public DecimalFormat getValorSugerido() {
+	public double getValorSugerido() {
 		return valorSugerido;
 	}
-	public void setValorSugerido(DecimalFormat valorSugerido) {
+	public void setValorSugerido(double valorSugerido) {
 		this.valorSugerido = valorSugerido;
 	}
 	@Column
